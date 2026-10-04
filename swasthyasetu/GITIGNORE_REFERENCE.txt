@@ -1,0 +1,17 @@
+# Files and patterns that should NOT be committed to version control:
+#
+# .env                  - Your actual secrets and API keys
+# __pycache__/          - Python bytecode cache
+# venv/ / env/          - Virtual environment
+# *.log                 - Log files
+# .DS_Store / Thumbs.db - OS metadata files
+
+# Add this content to your .gitignore file:
+# .env
+# __pycache__/
+# *.pyc
+# venv/
+# .venv/
+# *.log
+# .DS_Store
+# Thumbs.db

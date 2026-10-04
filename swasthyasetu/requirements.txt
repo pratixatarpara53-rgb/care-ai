@@ -1,0 +1,12 @@
+# SwasthyaSetu AI – Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Web framework
+Flask==3.0.3
+flask-cors==4.0.1
+
+# Environment variable loading
+python-dotenv==1.0.1
+
+# HTTP client for Watsonx.ai API calls
+requests==2.32.3

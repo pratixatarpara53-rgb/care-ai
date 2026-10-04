@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="SwasthyaSetu AI – Rural Preventive Healthcare powered by IBM Granite"/>
+  <title>SwasthyaSetu AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/styles.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💙</text></svg>"/>
+</head>
+<body>
+
+<!-- EMERGENCY -->
+<div class="emergency-banner" role="alert">
+  <span class="sos-dot"></span>
+  <strong>EMERGENCY — Call <a href="tel:108">108</a> (Free Ambulance)</strong>
+  <span class="emer-sep">|</span>
+  <span>This AI does <strong>NOT</strong> diagnose diseases or replace doctors</span>
+  <span class="emer-sep">|</span>
+  <strong>आपातकाल: <a href="tel:108">108</a></strong>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-block" onclick="showSection('section-home')">
+      <div class="logo-ring">💙</div>
+      <div>
+        <div class="logo-name" data-i18n="appName">SwasthyaSetu AI</div>
+        <div class="logo-sub" data-i18n="appTagline">Rural Preventive Healthcare</div>
+      </div>
+    </div>
+
+    <nav class="header-nav">
+      <button class="nav-btn" data-section="section-home"       data-i18n="navHome">Home</button>
+      <button class="nav-btn" data-section="section-guidance"   data-i18n="navGuidance">Health Guidance</button>
+      <button class="nav-btn" data-section="section-risk"       data-i18n="navRisk">Risk Screening</button>
+      <button class="nav-btn" data-section="section-navigation" data-i18n="navNavigation">Care Navigation</button>
+      <button class="nav-btn" data-section="section-followup"   data-i18n="navFollowup">Follow-up</button>
+      <button class="nav-btn" data-section="section-dashboard"  data-i18n="navDashboard">Dashboard</button>
+      <div class="lang-group">
+        <button class="lang-btn active-lang" id="lang-en" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn"             id="lang-hi" onclick="switchLang('hi')">हि</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ══════════════════════════════════════
+     HOME
+══════════════════════════════════════ -->
+<section id="section-home" class="page-section active">
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="hero-icon">💙</span>
+    <div class="hero-eyebrow">✦ IBM Granite AI &nbsp;·&nbsp; SDG 3 &amp; 10 &nbsp;·&nbsp; Rural India</div>
+    <h1 class="hero-title" data-i18n="heroTitle">SwasthyaSetu AI</h1>
+    <p class="hero-sub" data-i18n="heroSubtitle">Your trusted rural healthcare companion powered by IBM Granite AI.</p>
+    <div class="hero-actions">
+      <button class="btn btn-white btn-xl" onclick="showSection('section-guidance')">
+        💬 <span data-i18n="heroCta1">Ask Health Question</span>
+      </button>
+      <button class="btn btn-ghost btn-xl" onclick="showSection('section-risk')">
+        🔍 <span data-i18n="heroCta2">Screen Symptoms</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- BADGE STRIP -->
+  <div class="badge-strip">
+    <span class="chip chip-indigo">🤖 IBM Granite AI</span>
+    <span class="chip chip-emerald">🌱 SDG 3 – Good Health</span>
+    <span class="chip chip-indigo">⚖️ SDG 10 – Reduced Inequalities</span>
+    <span class="chip chip-coral">🇮🇳 Built for Rural India</span>
+    <span class="chip chip-teal">🌐 English &amp; हिन्दी</span>
+  </div>
+
+  <!-- FEATURE CARDS -->
+  <div class="features-grid">
+    <div class="feat-card" onclick="showSection('section-guidance')" tabindex="0">
+      <div class="feat-icon-box fib-1">💬</div>
+      <h3 data-i18n="feat1Title">Health Guidance</h3>
+      <p data-i18n="feat1Desc">Simple, safe health education and preventive care</p>
+    </div>
+    <div class="feat-card" onclick="showSection('section-risk')" tabindex="0">
+      <div class="feat-icon-box fib-2">🔍</div>
+      <h3 data-i18n="feat2Title">Risk Screening</h3>
+      <p data-i18n="feat2Desc">Understand the urgency level of your symptoms</p>
+    </div>
+    <div class="feat-card" onclick="showSection('section-navigation')" tabindex="0">
+      <div class="feat-icon-box fib-3">🗺️</div>
+      <h3 data-i18n="feat3Title">Care Navigation</h3>
+      <p data-i18n="feat3Desc">Find the right healthcare pathway</p>
+    </div>
+    <div class="feat-card" onclick="showSection('section-followup')" tabindex="0">
+      <div class="feat-icon-box fib-4">📅</div>
+      <h3 data-i18n="feat4Title">Follow-up Manager</h3>
+      <p data-i18n="feat4Desc">Reminders, medicine tracking &amp; HW tasks</p>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER NOTICE -->
+  <div class="notice notice-warn">
+    <span class="notice-icon">⚠️</span>
+    <div><strong>Medical Disclaimer: </strong><span data-i18n="disclaimerHome">SwasthyaSetu AI provides health education and guidance only. It does NOT diagnose diseases, prescribe medicines, or replace doctors.</span></div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="card" style="margin-bottom:1.5rem;">
+    <div class="card-header">
+      <div class="card-icon ci-indigo">🔄</div>
+      <div>
+        <h2 data-i18n="howItWorks">How It Works</h2>
+        <p style="color:var(--text-muted);font-size:.84rem;margin:0;" data-i18n="howSubtitle">Four specialized AI agents guide your healthcare journey</p>
+      </div>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <span class="step-icon">💬</span>
+        <h4>Health Guidance</h4>
+        <p>Ask any health question. Get educational info in English or Hindi.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <span class="step-icon">🔍</span>
+        <h4>Risk Screening</h4>
+        <p>Describe symptoms. AI classifies urgency: Low, Moderate, or Urgent.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <span class="step-icon">🗺️</span>
+        <h4>Care Navigation</h4>
+        <p>Get directed to the right pathway: ASHA → PHC → Doctor → Hospital → 108.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <span class="step-icon">📅</span>
+        <h4>Follow-up</h4>
+        <p>Reminders, medicine schedules &amp; healthcare worker task tracking.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:1.25rem;">
+      <div class="acc-item">
+        <div class="acc-head"><span>💬 Health Guidance Agent</span><span class="acc-chevron">▼</span></div>
+        <div class="acc-body"><p>Provides safe health education in <strong>English &amp; Hindi</strong>. Does NOT diagnose diseases. Powered by IBM Granite via Watsonx.ai.</p></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head"><span>🔍 Risk Screening Agent</span><span class="acc-chevron">▼</span></div>
+        <div class="acc-body"><p>Classifies symptom urgency as <strong>Low, Moderate, or Urgent</strong>. Immediately routes urgent cases to emergency care. <strong>Not a medical diagnosis.</strong></p></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head"><span>🗺️ Care Navigation Agent</span><span class="acc-chevron">▼</span></div>
+        <div class="acc-body"><p>Recommends: Local Health Worker (ASHA/ANM), PHC, Doctor Consultation, Hospital, or Emergency (108).</p></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head"><span>📅 Follow-up Agent</span><span class="acc-chevron">▼</span></div>
+        <div class="acc-body"><p>Tracks appointments, medicine reminders (doctor-prescribed only), and ASHA/ANM task assignments. <strong>Does NOT prescribe medicines.</strong></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIVACY -->
+  <div class="privacy-box">
+    <h3>🔒 <span data-i18n="privacyTitle">Privacy &amp; Medical Disclaimer</span></h3>
+    <ul>
+      <li>SwasthyaSetu AI does <strong>not</strong> permanently store personally identifiable information.</li>
+      <li>All AI responses are for <strong>educational and navigational purposes only</strong>.</li>
+      <li>This system does <strong>not</strong> diagnose diseases, generate prescriptions, or recommend prescription medicines.</li>
+      <li>Powered by IBM Granite / Watsonx.ai — always verify AI responses with a qualified healthcare professional.</li>
+      <li>In a medical emergency, <strong>call 108 immediately</strong>.</li>
+    </ul>
+    <p style="margin-top:.75rem;font-size:.8rem;color:var(--text-muted);">IBM Academic Project · SDG 3 · SDG 10</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     HEALTH GUIDANCE
+══════════════════════════════════════ -->
+<section id="section-guidance" class="page-section">
+  <div class="agent-banner" style="background:var(--g-indigo);">
+    <span class="ab-icon">💬</span>
+    <h2 data-i18n="guidanceTitle">Health Guidance Agent</h2>
+    <p data-i18n="guidanceDesc">Get safe, simple health education powered by IBM Granite AI</p>
+  </div>
+
+  <div class="card">
+    <div class="notice notice-info">
+      <span class="notice-icon">ℹ️</span>
+      <div>Educational health information only — does <strong>NOT</strong> diagnose diseases or prescribe medicines. Powered by <strong>IBM Granite</strong> via Watsonx.ai.</div>
+    </div>
+
+    <form id="form-guidance" novalidate>
+      <div class="form-group">
+        <label class="form-label" for="inp-question" data-i18n="guidanceLabel">Your Health Question</label>
+        <textarea id="inp-question" class="form-control" rows="3"
+          placeholder="E.g.: What are signs of dehydration? How to prevent malaria?"
+          data-i18n-placeholder="guidancePlaceholder" required></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="inp-patient-guidance" data-i18n="guidancePatientLabel">Your Name (Optional)</label>
+          <input type="text" id="inp-patient-guidance" class="form-control" placeholder="Enter your name"
+            data-i18n-placeholder="guidancePatientPlaceholder"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inp-lang" data-i18n="guidanceLangLabel">Response Language</label>
+          <select id="inp-lang" class="form-control">
+            <option value="english">🇬🇧 English</option>
+            <option value="hindi">🇮🇳 हिन्दी (Hindi)</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" id="btn-guidance" class="btn btn-primary btn-xl btn-block" data-i18n="guidanceBtn">
+        💬 Get Health Information
+      </button>
+    </form>
+    <div id="response-guidance" class="response-box" role="region" aria-live="polite"></div>
+  </div>
+
+  <div class="card" style="margin-top:1.4rem;">
+    <h3 style="margin-bottom:1rem;">💡 Quick Questions</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem;">
+      <button class="btn btn-outline btn-sm" onclick="setQ('What are early signs of dehydration and how to prevent it?')">Dehydration</button>
+      <button class="btn btn-outline btn-sm" onclick="setQ('How to prevent malaria during monsoon?')">Malaria prevention</button>
+      <button class="btn btn-outline btn-sm" onclick="setQ('What foods help prevent anaemia in pregnant women?')">Anaemia in pregnancy</button>
+      <button class="btn btn-outline btn-sm" onclick="setQ('How to ensure safe drinking water in rural areas?')">Safe drinking water</button>
+      <button class="btn btn-outline btn-sm" onclick="setQ('What vaccinations should a child get in the first year?')">Child vaccinations</button>
+      <button class="btn btn-outline btn-sm" onclick="setQ('बच्चों में कुपोषण कैसे रोकें? सरल उपाय बताएं।')">बच्चों में कुपोषण</button>
+      <button class="btn btn-outline btn-sm" onclick="setQ('ORS घर पर कैसे बनाएं और कब उपयोग करें?')">ORS कैसे बनाएं</button>
+      <button class="btn btn-outline btn-sm" onclick="setQ('मलेरिया के लक्षण और बचाव के उपाय क्या हैं?')">मलेरिया के उपाय</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     RISK SCREENING
+══════════════════════════════════════ -->
+<section id="section-risk" class="page-section">
+  <div class="agent-banner" style="background:var(--g-coral);">
+    <span class="ab-icon">🔍</span>
+    <h2 data-i18n="riskTitle">Risk Screening Agent</h2>
+    <p data-i18n="riskDesc">Preliminary symptom assessment — NOT a medical diagnosis</p>
+  </div>
+
+  <div class="notice notice-alert">
+    <span class="notice-icon">⚠️</span>
+    <div><strong data-i18n="riskDisclaimerTitle">Important: </strong><span data-i18n="riskDisclaimerText">Preliminary screening only — NOT a medical diagnosis. In emergencies call 108 immediately.</span></div>
+  </div>
+
+  <div class="card">
+    <form id="form-risk" novalidate>
+      <div class="form-group">
+        <label class="form-label" for="inp-symptoms" data-i18n="riskSympLabel">Describe Your Symptoms</label>
+        <textarea id="inp-symptoms" class="form-control" rows="4"
+          placeholder="Describe what you are experiencing"
+          data-i18n-placeholder="riskSympPlaceholder" required></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="inp-patient-risk">Patient Name (Optional)</label>
+          <input type="text" id="inp-patient-risk" class="form-control" placeholder="Enter patient name"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inp-age" data-i18n="riskAgeLabel">Age (Optional)</label>
+          <input type="number" id="inp-age" class="form-control" placeholder="e.g.: 35"
+            data-i18n-placeholder="riskAgePlaceholder" min="0" max="120"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="inp-gender" data-i18n="riskGenderLabel">Gender (Optional)</label>
+        <select id="inp-gender" class="form-control">
+          <option value="">Select / चुनें</option>
+          <option value="Male">Male / पुरुष</option>
+          <option value="Female">Female / महिला</option>
+          <option value="Other">Other / अन्य</option>
+        </select>
+      </div>
+      <button type="submit" id="btn-risk" class="btn btn-coral btn-xl btn-block" data-i18n="riskBtn">
+        🔍 Screen My Symptoms
+      </button>
+    </form>
+    <div id="response-risk" class="response-box" role="region" aria-live="polite"></div>
+    <div id="goto-nav-wrap" style="display:none;margin-top:1rem;text-align:center;">
+      <button id="btn-go-navigation" class="btn btn-outline btn-lg">🗺️ Get Care Navigation →</button>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1.4rem;">
+    <h3 style="margin-bottom:1rem;">Understanding Risk Levels</h3>
+    <div style="display:flex;flex-direction:column;gap:.7rem;">
+      <div style="display:flex;align-items:center;gap:1rem;padding:.9rem 1.1rem;background:var(--emerald-light);border-radius:12px;border-left:4px solid var(--emerald);">
+        <span class="risk-badge low">🟢 Low</span>
+        <span style="font-size:.87rem;color:var(--text-2);">Minor symptoms, no immediate threat. Monitor at home; contact ASHA worker if worsening.</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:1rem;padding:.9rem 1.1rem;background:var(--amber-light);border-radius:12px;border-left:4px solid var(--amber);">
+        <span class="risk-badge moderate">🟡 Moderate</span>
+        <span style="font-size:.87rem;color:var(--text-2);">Needs attention within 24–48 hours. Visit your nearest PHC or healthcare worker.</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:1rem;padding:.9rem 1.1rem;background:var(--coral-light);border-radius:12px;border-left:4px solid var(--coral);">
+        <span class="risk-badge urgent">🔴 Urgent</span>
+        <span style="font-size:.87rem;color:var(--text-2);">Requires immediate care. Call <strong>108</strong> or go to hospital emergency NOW.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CARE NAVIGATION
+══════════════════════════════════════ -->
+<section id="section-navigation" class="page-section">
+  <div class="agent-banner" style="background:var(--g-teal);">
+    <span class="ab-icon">🗺️</span>
+    <h2 data-i18n="navAgentTitle">Care Navigation Agent</h2>
+    <p data-i18n="navAgentDesc">Find the right healthcare pathway for your needs</p>
+  </div>
+
+  <div class="card">
+    <form id="form-navigation" novalidate>
+      <div class="form-group">
+        <label class="form-label" for="inp-nav-symptoms" data-i18n="navSympLabel">Describe Your Health Concern</label>
+        <textarea id="inp-nav-symptoms" class="form-control" rows="3"
+          placeholder="Describe your health concern or symptoms"
+          data-i18n-placeholder="navSympPlaceholder" required></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="inp-patient-nav">Patient Name (Optional)</label>
+          <input type="text" id="inp-patient-nav" class="form-control" placeholder="Enter patient name"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inp-nav-risk" data-i18n="navRiskLabel">Risk Level</label>
+          <select id="inp-nav-risk" class="form-control">
+            <option value="LOW">🟢 Low</option>
+            <option value="MODERATE" selected>🟡 Moderate</option>
+            <option value="URGENT">🔴 Urgent</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="inp-nav-location" data-i18n="navLocationLabel">Location / District (Optional)</label>
+        <input type="text" id="inp-nav-location" class="form-control"
+          placeholder="e.g.: Varanasi, Uttar Pradesh"
+          data-i18n-placeholder="navLocationPlaceholder"/>
+      </div>
+      <button type="submit" id="btn-navigation" class="btn btn-teal btn-xl btn-block" data-i18n="navBtn">
+        🗺️ Get Navigation Guidance
+      </button>
+    </form>
+    <div id="response-navigation" class="response-box" role="region" aria-live="polite"></div>
+  </div>
+
+  <div class="card" style="margin-top:1.4rem;">
+    <h3 style="margin-bottom:1rem;">🏥 Healthcare Pathway Reference</h3>
+    <div>
+      <div class="pw-row" style="background:#f0fdf4;border-color:#059669;">
+        <span class="pw-icon">👩‍⚕️</span>
+        <div><strong style="color:#047857;">ASHA / ANM (Local Health Worker)</strong>
+        <p style="font-size:.82rem;color:var(--text-muted);margin:.2rem 0 0;">Basic care, home visits, immunisation, health education, maternal care</p></div>
+      </div>
+      <div class="pw-row" style="background:#eff6ff;border-color:#3b82f6;">
+        <span class="pw-icon">🏥</span>
+        <div><strong style="color:#1d4ed8;">Primary Health Centre (PHC)</strong>
+        <p style="font-size:.82rem;color:var(--text-muted);margin:.2rem 0 0;">OPD, vaccinations, minor illness treatment, antenatal care, referrals</p></div>
+      </div>
+      <div class="pw-row" style="background:#f5f3ff;border-color:#7c3aed;">
+        <span class="pw-icon">👨‍⚕️</span>
+        <div><strong style="color:#5b21b6;">Doctor Consultation</strong>
+        <p style="font-size:.82rem;color:var(--text-muted);margin:.2rem 0 0;">GP or specialist for complex conditions, prescription management</p></div>
+      </div>
+      <div class="pw-row" style="background:var(--amber-light);border-color:var(--amber);">
+        <span class="pw-icon">🏨</span>
+        <div><strong style="color:#b45309;">District / Sub-district Hospital</strong>
+        <p style="font-size:.82rem;color:var(--text-muted);margin:.2rem 0 0;">Moderate to serious conditions, labs, specialists, overnight care</p></div>
+      </div>
+      <div class="pw-row" style="background:var(--coral-light);border-color:var(--coral);">
+        <span class="pw-icon">🚨</span>
+        <div><strong style="color:#be123c;">Emergency — Call 108</strong>
+        <p style="font-size:.82rem;color:var(--text-muted);margin:.2rem 0 0;">Life-threatening situations — FREE ambulance anywhere in India</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOLLOW-UP
+══════════════════════════════════════ -->
+<section id="section-followup" class="page-section">
+  <div class="agent-banner" style="background:var(--g-amber);">
+    <span class="ab-icon">📅</span>
+    <h2 data-i18n="fuTitle">Follow-up Agent</h2>
+    <p data-i18n="fuDesc">Manage follow-ups, medicine reminders and healthcare worker tasks</p>
+  </div>
+
+  <div class="tab-container">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="tab-new">      ➕ <span data-i18n="fuTabNew">New Follow-up</span></button>
+      <button class="tab-btn"        data-tab="tab-list">     📋 <span data-i18n="fuTabList">My Follow-ups</span></button>
+      <button class="tab-btn"        data-tab="tab-medicine"> 💊 <span data-i18n="fuTabMed">Medicine Reminders</span></button>
+      <button class="tab-btn"        data-tab="tab-hw">       👩‍⚕️ <span data-i18n="fuTabHW">HW Tasks</span></button>
+    </div>
+
+    <!-- New Follow-up -->
+    <div id="tab-new" class="tab-panel active card">
+      <form id="form-followup" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="fu-patient" data-i18n="fuPatientLabel">Patient Name</label>
+            <input type="text" id="fu-patient" class="form-control" placeholder="Patient name" required/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fu-contact" data-i18n="fuContactLabel">Contact Number</label>
+            <input type="tel" id="fu-contact" class="form-control" placeholder="9876543210"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fu-concern" data-i18n="fuConcernLabel">Health Concern</label>
+          <textarea id="fu-concern" class="form-control" rows="2" placeholder="Describe the health concern" required></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="fu-date" data-i18n="fuDateLabel">Follow-up Date</label>
+            <input type="date" id="fu-date" class="form-control"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fu-pathway" data-i18n="fuPathwayLabel">Recommended Pathway</label>
+            <select id="fu-pathway" class="form-control">
+              <option value="LOCAL_HEALTH_WORKER">👩‍⚕️ Local Health Worker</option>
+              <option value="PHC" selected>🏥 PHC</option>
+              <option value="DOCTOR_CONSULTATION">👨‍⚕️ Doctor</option>
+              <option value="HOSPITAL">🏨 Hospital</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fu-notes" data-i18n="fuNotesLabel">Notes</label>
+          <textarea id="fu-notes" class="form-control" rows="2" placeholder="Any additional notes"></textarea>
+        </div>
+        <button type="submit" id="btn-followup" class="btn btn-primary btn-lg btn-block" data-i18n="fuBtn">📅 Create Follow-up</button>
+      </form>
+    </div>
+
+    <!-- Follow-up List -->
+    <div id="tab-list" class="tab-panel">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-icon ci-amber">📋</div>
+          <div><h3>Follow-up Records</h3><p style="font-size:.82rem;color:var(--text-muted);margin:0;">All patient follow-ups</p></div>
+        </div>
+        <div id="followup-list" aria-live="polite">
+          <div class="skel" style="height:68px;margin-bottom:.7rem;"></div>
+          <div class="skel" style="height:68px;margin-bottom:.7rem;"></div>
+          <div class="skel" style="height:68px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Medicine Reminders -->
+    <div id="tab-medicine" class="tab-panel">
+      <div class="card" style="margin-bottom:1.4rem;">
+        <div class="notice notice-warn" style="margin-bottom:1.25rem;">
+          <span class="notice-icon">⚠️</span>
+          <div data-i18n="fuMedDisclaimer">Enter only medicines prescribed by your doctor. SwasthyaSetu does NOT prescribe medicines.</div>
+        </div>
+        <form id="form-medicine" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="med-patient">Patient Name</label>
+              <input type="text" id="med-patient" class="form-control" placeholder="Patient name" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="med-name" data-i18n="fuMedNameLabel">Medicine Name (doctor-prescribed)</label>
+              <input type="text" id="med-name" class="form-control" placeholder="As prescribed by doctor"
+                data-i18n-placeholder="fuMedNamePlaceholder" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="med-time" data-i18n="fuMedTimeLabel">Reminder Time</label>
+              <input type="text" id="med-time" class="form-control" placeholder="e.g.: 8:00 AM" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="med-freq" data-i18n="fuMedFreqLabel">Frequency</label>
+              <select id="med-freq" class="form-control">
+                <option>Once daily</option>
+                <option>Twice daily</option>
+                <option>Three times daily</option>
+                <option>As needed</option>
+                <option>Weekly</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="med-notes" data-i18n="fuMedNotesLabel">Notes</label>
+            <input type="text" id="med-notes" class="form-control" placeholder="e.g.: Take after meals"/>
+          </div>
+          <button type="submit" id="btn-medicine" class="btn btn-primary btn-lg btn-block" data-i18n="fuMedBtn">💊 Add Reminder</button>
+        </form>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:1rem;">Active Medicine Reminders</h3>
+        <div id="medicine-list" aria-live="polite">
+          <div class="skel" style="height:68px;margin-bottom:.7rem;"></div>
+          <div class="skel" style="height:68px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HW Tasks -->
+    <div id="tab-hw" class="tab-panel">
+      <div class="card" style="margin-bottom:1.4rem;">
+        <form id="form-hw-task" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="hw-worker" data-i18n="fuHWWorkerLabel">Healthcare Worker Name</label>
+              <input type="text" id="hw-worker" class="form-control" placeholder="e.g.: Sunita ASHA" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="hw-patient" data-i18n="fuHWPatientLabel">Patient Name</label>
+              <input type="text" id="hw-patient" class="form-control" placeholder="Patient name"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="hw-task" data-i18n="fuHWTaskLabel">Task Description</label>
+            <textarea id="hw-task" class="form-control" rows="2" placeholder="Describe the task" required></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="hw-due" data-i18n="fuHWDueLabel">Due Date</label>
+              <input type="date" id="hw-due" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="hw-priority" data-i18n="fuHWPriorityLabel">Priority</label>
+              <select id="hw-priority" class="form-control">
+                <option value="NORMAL">Normal / सामान्य</option>
+                <option value="HIGH">High / उच्च</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" id="btn-hw-task" class="btn btn-primary btn-lg btn-block" data-i18n="fuHWBtn">✅ Create Task</button>
+        </form>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:1rem;">Active HW Tasks</h3>
+        <div id="hw-tasks-list" aria-live="polite">
+          <div class="skel" style="height:68px;margin-bottom:.7rem;"></div>
+          <div class="skel" style="height:68px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     DASHBOARD
+══════════════════════════════════════ -->
+<section id="section-dashboard" class="page-section">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:.75rem;">
+    <div>
+      <h2 style="font-size:1.6rem;font-weight:900;color:var(--ink-mid);">
+        📊 <span data-i18n="dashTitle">Healthcare Dashboard</span>
+      </h2>
+      <p style="color:var(--text-muted);font-size:.84rem;margin:0;" data-i18n="dashDesc">Patient interactions, follow-ups and risk overview</p>
+    </div>
+    <button class="btn btn-outline btn-sm" onclick="loadDashboard()">
+      🔄 <span data-i18n="dashRefresh">Refresh</span>
+    </button>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="si">📨</span>
+      <div class="sv" id="dash-total">–</div>
+      <div class="sl" data-i18n="dashTotal">Total Requests</div>
+    </div>
+    <div class="stat-card sc-coral">
+      <span class="si">⏳</span>
+      <div class="sv" id="dash-pending" style="color:var(--coral);">–</div>
+      <div class="sl" data-i18n="dashPending">Pending Follow-ups</div>
+    </div>
+    <div class="stat-card sc-teal">
+      <span class="si">✅</span>
+      <div class="sv" id="dash-completed" style="color:var(--teal);">–</div>
+      <div class="sl" data-i18n="dashCompleted">Completed</div>
+    </div>
+    <div class="stat-card sc-amber">
+      <span class="si">📋</span>
+      <div class="sv" id="dash-total-fu">–</div>
+      <div class="sl">Total Follow-ups</div>
+    </div>
+  </div>
+
+  <div class="dash-grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon ci-coral">📊</div>
+        <div>
+          <h3 data-i18n="dashRisk">Risk Distribution</h3>
+          <p style="font-size:.8rem;color:var(--text-muted);margin:0;">From preliminary screenings</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:1.1rem;">
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.35rem;">
+            <span style="font-size:.84rem;font-weight:700;color:#047857;" data-i18n="dashLow">Low Risk</span>
+            <span id="dash-low" style="font-weight:800;color:#047857;">–</span>
+          </div>
+          <div id="bar-low"></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.35rem;">
+            <span style="font-size:.84rem;font-weight:700;color:var(--amber);" data-i18n="dashModerate">Moderate</span>
+            <span id="dash-moderate" style="font-weight:800;color:var(--amber);">–</span>
+          </div>
+          <div id="bar-moderate"></div>
+        </div>
+        <div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.35rem;">
+            <span style="font-size:.84rem;font-weight:700;color:var(--coral);" data-i18n="dashUrgent">Urgent</span>
+            <span id="dash-urgent" style="font-weight:800;color:var(--coral);">–</span>
+          </div>
+          <div id="bar-urgent"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon ci-indigo">📅</div>
+        <div>
+          <h3 data-i18n="dashUpcoming">Upcoming Appointments</h3>
+          <p style="font-size:.8rem;color:var(--text-muted);margin:0;">Next 5 pending follow-ups</p>
+        </div>
+      </div>
+      <div id="upcoming-list" aria-live="polite">
+        <div class="skel" style="height:54px;margin-bottom:.5rem;"></div>
+        <div class="skel" style="height:54px;margin-bottom:.5rem;"></div>
+        <div class="skel" style="height:54px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon ci-teal">🕐</div>
+      <div>
+        <h3 data-i18n="dashInteractions">Recent Patient Interactions</h3>
+        <p style="font-size:.8rem;color:var(--text-muted);margin:0;">Last 8 agent interactions</p>
+      </div>
+    </div>
+    <div id="interactions-list" aria-live="polite">
+      <div class="skel" style="height:42px;margin-bottom:.4rem;"></div>
+      <div class="skel" style="height:42px;margin-bottom:.4rem;"></div>
+      <div class="skel" style="height:42px;"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <a onclick="showSection('section-home');return false;" href="#">Home</a>
+    <a onclick="showSection('section-guidance');return false;" href="#">Health Guidance</a>
+    <a onclick="showSection('section-risk');return false;" href="#">Risk Screening</a>
+    <a onclick="showSection('section-dashboard');return false;" href="#">Dashboard</a>
+  </div>
+  <div><strong>SwasthyaSetu AI</strong> — Rural Preventive Healthcare &amp; Care Navigation</div>
+  <div class="footer-badge">🤖 IBM Granite / Watsonx.ai &nbsp;·&nbsp; 🇮🇳 IBM Academic Project &nbsp;·&nbsp; SDG 3 &amp; 10</div>
+  <div class="footer-fine">
+    ⚠️ Educational and navigational purposes only. Does not diagnose diseases, generate prescriptions, or replace doctors.
+    Emergency: call <strong>108</strong> immediately.
+  </div>
+</footer>
+
+<div id="toast-container" class="toast-container" role="status" aria-live="polite"></div>
+
+<script src="/js/i18n.js"></script>
+<script src="/js/app.js"></script>
+<script>
+  function switchLang(lang) {
+    setLanguage(lang);
+  }
+  function setQ(q) {
+    const el = document.getElementById('inp-question');
+    if (el) { el.value = q; el.focus(); }
+    showSection('section-guidance');
+  }
+  (function(){
+    const rf = document.getElementById('form-risk');
+    if (rf) rf.addEventListener('submit', function(){
+      setTimeout(function(){ const w = document.getElementById('goto-nav-wrap'); if(w) w.style.display = 'block'; }, 2200);
+    });
+    // Accordion
+    document.querySelectorAll('.acc-head').forEach(h => {
+      h.addEventListener('click', () => {
+        const item = h.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.acc-item').forEach(i => {
+          i.classList.remove('open');
+          const body = i.querySelector('.acc-body');
+          if (body) body.style.maxHeight = '0';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          const body = item.querySelector('.acc-body');
+          if (body) body.style.maxHeight = body.scrollHeight + 40 + 'px';
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
